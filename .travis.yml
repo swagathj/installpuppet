@@ -1,0 +1,17 @@
+language: c
+notifications:
+  email:
+    - paul4hough@gmail.com
+
+before_script:
+  - type python
+  - python --version
+  - ls -al ~
+  - env
+
+script:
+  - python setup.py test_unit
+  - sudo python setup.py test_system
+
+after_script:
+  - puppet --version
